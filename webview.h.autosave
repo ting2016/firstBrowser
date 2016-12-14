@@ -1,0 +1,18 @@
+#ifndef TAB_H
+#define TAB_H
+
+#include <QWebView>
+#include <mainwindow.h>
+#include <page.h>
+
+class Tab: public QWebView{
+    Q_OBJECT
+private:
+    Browser * pBrowser;
+    Page * pPage;
+public:
+    Tab(Browser * pBrowser);
+    ~Tab();
+};
+
+#endif // TAB_H

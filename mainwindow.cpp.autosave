@@ -1,0 +1,13 @@
+#include <browser.h>
+#include <QTabBar>
+
+Browser::Browser(){
+    pTab = new QWebView(this);
+    view->load(url);
+    QToolBar *toolBar = addToolBar(tr("Navigation"));
+    toolBar->addAction(view->pageAction(QWebPage::Back));
+    toolBar->addAction(view->pageAction(QWebPage::Forward));
+    toolBar->addAction(view->pageAction(QWebPage::Reload));
+    toolBar->addAction(view->pageAction(QWebPage::Stop));
+    toolBar->addWidget(locationEdit);
+}

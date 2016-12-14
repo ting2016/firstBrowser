@@ -1,0 +1,18 @@
+#ifndef MAINWINDOW_H
+#define MAINWINDOW_H
+
+#include <QMainWindow>
+#include <webview.h>
+
+class Browser : public QMainWindow
+{
+    Q_OBJECT
+ private:
+    Tab * pWebView;
+ public:
+    Browser();
+    ~Browser();
+
+};
+
+#endif // MAINWINDOW_H
