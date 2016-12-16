@@ -12,16 +12,25 @@ class Tab: public QWebView
 private:
     Browser * pBrowser;
     Page *pPage;
-    QUrl url;
+    bool isActive;
 public:
     Tab(Browser * pBrowser);
     ~Tab();
     Page& getPage();
+    QWebView* createWindow(QWebPage::WebWindowType type);
+    void activate();
+    void disActivate();
 
 protected slots:
+    void doEnableJavScript();
+    void doLoad(QUrl);
+    void adjustLocation();
 
 
-//protected signals:
+
+signals:
+    void askEnableJavaScript();
+    void askLoad(QUrl);
 
 };
 

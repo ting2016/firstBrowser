@@ -21,6 +21,7 @@ protected:
 
 protected slots:
 
+
 //protected signals:
 
 };

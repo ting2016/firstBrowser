@@ -9,18 +9,24 @@ class Browser : public QMainWindow
 {
     Q_OBJECT
  private:
-    Tab * pTab;
     QLineEdit *locationEdit;
+    QVector<Tab*> tabs;
+    int currentTabIndex;
+    QUrl defaultUrl;
+
  public:
     Browser();
     ~Browser();
+    QLineEdit* getLocationEdit();
 
  protected slots:
-
- //protected signals:
-
     void changeLocation();
-    void doClickOnLink(const QUrl &clickedUrl);
+    void doAddTab(Tab* thisTab);
+    void doLoad(QUrl);
+ signals:
+    void askAddTab(Tab*);
+    void askLoad(QUrl);
+
 
 };
 
