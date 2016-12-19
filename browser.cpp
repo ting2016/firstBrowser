@@ -33,7 +33,8 @@ Browser::Browser(){
     connect(this, SIGNAL(askLoad(QUrl)), this, SLOT(doLoad(QUrl)));
     connect(this, SIGNAL(askAddTab(Tab*)), this, SLOT(doAddTab(Tab*)));
 
-    setCentralWidget(tabs.at(currentTabIndex));
+    //setCentralWidget(tabs.at(currentTabIndex));
+
     setUnifiedTitleAndToolBarOnMac(true);
     emit askLoad(defaultUrl);
 }

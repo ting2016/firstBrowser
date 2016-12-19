@@ -6,8 +6,9 @@
 using namespace std;
 
 Tab::Tab(Browser * pBrowser)
+    :QWebView(pBrowser)
 {
-
+    this->setGeometry(100, 100, 400, 400);
     this->pBrowser = pBrowser;
     pPage = new Page(this);
     connect(this,SIGNAL(askLoad(QUrl)), this, SLOT(doLoad(QUrl)));
